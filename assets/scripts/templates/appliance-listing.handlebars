@@ -1,0 +1,22 @@
+{{#each appliances as |appliance|}}
+  {{log appliance}}
+  <section data-id="{{appliance.id}}">
+    <h6>Part:</h6>
+    <h3>
+      <!-- {{limit appliance.part_number 15}} -->
+      <!-- unsure how to use limit  -->
+      {{appliance.part_number}}
+    </h2>
+    <h6>Location:</h6>
+    <p>
+      {{#if appliance.location}}
+        {{appliance.location}}
+      {{else}}
+        No author provided.
+      {{/if}}
+    </p>
+    <button data-id="{{appliance.id}}" class="btn btn-danger remove-appliance">Remove Appliance</button>
+    <!-- {{> partial}} -->
+  </section>
+
+{{/each}}
