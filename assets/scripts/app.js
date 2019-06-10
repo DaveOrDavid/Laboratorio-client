@@ -6,6 +6,7 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 const authEvents = require('./auth/events')
+const searchEvents = require('./lab-actions/events')
 
 $(() => {
   // authentication events on client side
@@ -14,5 +15,5 @@ $(() => {
   $('#sign-out').on('submit', authEvents.onSignOut)
   $('#change-pw').on('submit', authEvents.onChangePassword)
   // database search events on client side
-  // $('#search').on('submit', searchEvents.onSearch)
+  $('#show-labs').on('submit', searchEvents.onShowLabs)
 })
