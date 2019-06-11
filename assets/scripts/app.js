@@ -7,6 +7,7 @@
 // require('./example')
 const authEvents = require('./auth/events')
 const searchEvents = require('./lab-actions/events')
+// const handlebarEvents = require('./templates/appliance-listing.handlebars')
 
 $(() => {
   // authentication events on client side
@@ -18,5 +19,9 @@ $(() => {
   $('#add-appliance').on('submit', searchEvents.onAddLabs)
   $('#show-labs').on('submit', searchEvents.onShowLabs)
   $('#update-appliance').on('submit', searchEvents.onUpdateLabs)
+  // $('#update-form').on('submit', handlebarEvents.onUpdateLabs)
+  // thought I needed to require Handlebar file in app file.
   $('#destroy-appliance').on('submit', searchEvents.onDestroyLabs)
+  $('.content').on('submit', '.update-form', searchEvents.onUpdateLabs)
+  // ^^ access parent for Handlbars tbd
 })

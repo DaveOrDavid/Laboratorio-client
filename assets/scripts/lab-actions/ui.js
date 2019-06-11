@@ -1,7 +1,7 @@
 'use strict'
 
 const store = require('../store')
-const showApplianceTemplate = require('../templates/appliance-listing.handlebars')
+const applianceTemplate = require('../templates/appliance-listing.handlebars')
 
 const onAddLabsSuccess = responseData => {
   console.log('create/add appliance success', responseData)
@@ -20,12 +20,12 @@ const onAddLabsFailure = responseData => {
 
 const onShowLabsSuccess = responseData => {
   console.log('show all success', responseData)
-  const showApplianceHtml = showApplianceTemplate({ appliances: responseData.appliances })
+  const applianceHtml = applianceTemplate({ appliances: responseData.appliances })
   $('#message').text('Show labs success')
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#sign-up').trigger('reset')
-  $('#content').html(showApplianceHtml)
+  $('#content').html(applianceHtml)
 }
 
 const onShowLabsFailure = responseData => {
@@ -37,12 +37,12 @@ const onShowLabsFailure = responseData => {
 
 const onUpdateLabsSuccess = responseData => {
   console.log('update labs success', responseData)
-  // const showApplianceHtml = showApplianceTemplate({ appliances: responseData.appliances })
+  const applianceHtml = applianceTemplate({ appliances: responseData.appliances })
   $('#message').text('update labs success')
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#sign-up').trigger('reset')
-  // $('#content').html(showApplianceHtml)
+  $('#content').html(applianceHtml)
 }
 
 const onUpdateLabsFailure = responseData => {
@@ -54,12 +54,12 @@ const onUpdateLabsFailure = responseData => {
 
 const onDestroyLabsSuccess = responseData => {
   console.log('destroy labs success', responseData)
-  // const showApplianceHtml = showApplianceTemplate({ appliances: responseData.appliances })
+  // const applianceHtml = applianceTemplate({ appliances: responseData.appliances })
   $('#message').text('destroy labs success')
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#sign-up').trigger('reset')
-  // $('#content').html(showApplianceHtml)
+  // $('#content').html(applianceHtml)
 }
 
 const onDestroyLabsFailure = responseData => {

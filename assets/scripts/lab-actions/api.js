@@ -2,6 +2,7 @@
 
 const store = require('../store.js')
 const config = require('../config.js')
+const id = require('./events.js')
 
 const postLabs = (formData) => {
   return $.ajax({
@@ -27,14 +28,15 @@ const getLabs = (formData) => {
   })
 }
 
-const patchLabs = (formData) => {
+const patchLabs = (formData, id) => {
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/appliances/' + formData.id,
+    url: config.apiUrl + '/appliances/' + id,
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: formData
+    data: formData,
+    id
   })
 }
 

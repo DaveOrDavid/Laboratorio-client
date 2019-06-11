@@ -3,39 +3,47 @@
 {{#each appliances as |appliance|}}
   <!-- {{log appliance}} -->
   <section data-id="{{appliance.id}}">
+    <h6>ID:</h6>
+    <div>
+      <p>
+      {{#if appliance.id}}
+        {{appliance.id}}
+      {{else}}
+        No id provided.
+      {{/if}}
+    </p>
+    </div>
     <h6>Part:</h6>
     <div>
-      <li>
-      <!-- {{limit appliance.part_number 15}} -->
-      <!-- unsure how to use limit  -->
+      <p>
       {{#if appliance.part_number}}
         {{appliance.part_number}}
       {{else}}
         No part_number provided.
       {{/if}}
-      </li>
+    </p>
     </div>
     <h6>Location:</h6>
     <div>
-      <li>
+      <p>
       {{#if appliance.location}}
         {{appliance.location}}
       {{else}}
         No location provided.
       {{/if}}
-      </li>
+    </p>
     </div>
     <h6>Image URL:</h6>
     <div>
-      <li>
+      <p>
       {{#if appliance.image_url}}
         {{appliance.image_url}}
       {{else}}
         No image provided.
       {{/if}}
-      </li>
+    </p>
     </div>
-    <button data-id="{{appliance.id}}" class="btn btn-danger remove-appliance">Remove Appliance</button>
+    <!-- <button data-id="{{appliance.id}}" class="btn btn-danger remove-appliance">Remove Appliance</button> -->
     <!-- {{> partial}} -->
   </section>
 
@@ -43,6 +51,7 @@
     <h6>Update Appliance</h6>
       <div class="message-box"></div>
         <form class="update-form" data-id="{{appliance.id}}">
+          <div data-id="{{appliance.id}}"></div>
           <input name="appliance[location]" value="{{appliance.location}}" type="text" data-id={{"appliance.id"}}></input>
 
           <input name="appliance[part_number]" value="{{appliance.part_number}}" type="text" data-id="{{appliance.id}}"></input>

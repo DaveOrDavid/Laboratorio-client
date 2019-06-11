@@ -26,10 +26,12 @@ const onShowLabs = (event) => {
 
 const onUpdateLabs = (event) => {
   event.preventDefault()
+  const id = $(event.target).data('id')
   const form = event.target
   const formData = getFormFields(form)
   console.log('formData is ', formData)
-  api.patchLabs(formData)
+  console.log('id is ', id)
+  api.patchLabs(formData, id)
     .then(console.log('onUpdateLabs is working'))
     .then(ui.onUpdateLabsSuccess)
     .catch(ui.onUpdateLabsFailure)
