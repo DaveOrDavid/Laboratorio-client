@@ -16,7 +16,8 @@
           <h1>Laborator.io Set Up</h1>
           <!-- <h1><marquee direction="up">Laborator.io Set Up</marquee></h1> -->
           <!-- marquee tag is for testing purposes and will be removed in production -->
-            <nav>
+          <nav>
+            <div class='launch-auth'>
               <form id='sign-up'>
                 <h3>Sign Up</h3>
                 <!-- <form id='sign-up'> // wrapped for jQuery hide()-->
@@ -32,6 +33,7 @@
                   <input name="credentials[password]" type="password" placeholder='Password' required>
                   <input type="submit" value="Sign In">
               </form>
+            </div>
             <div class='in-app'>
               <form id='change-pw'>
                 <h3>Change Password</h3>
@@ -60,7 +62,7 @@
                 <input type="submit" value="Create Appliance"></input>
               </form>
 
-              <form id='update-appliance'>
+              <!-- <form id='update-appliance'>
                 <h3>Update Appliance</h3>
                 <input type="integer" name="id" placeholder="Appliance ID" required>
                 <input type="text" name="appliance[location]" placeholder="Location" required>
@@ -73,14 +75,14 @@
                 <h3>Delete Appliance</h3>
                 <input type="integer" name="id" placeholder="Appliance ID" required>
                 <input type="submit" value="Delete Appliance"></input>
-              </form>
+              </form> -->
 
               <!-- Start Handlebars code -->
-              <div id="content"> </div>
+              <div id="content" class="content"> </div>
               <!-- End Handlebars code -->
 
             </div>
-            </nav>
+          </nav>
         </header>
         <div class='message-block'> <!-- added div class to modify CSS so block size stays constant -->
           <h3 id="message">Item Info</h3>
