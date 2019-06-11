@@ -15,5 +15,8 @@ $(() => {
   $('#sign-out').on('submit', authEvents.onSignOut)
   $('#change-pw').on('submit', authEvents.onChangePassword)
   // database search events on client side
+  $('#add-appliance').on('submit', searchEvents.onAddLabs)
   $('#show-labs').on('submit', searchEvents.onShowLabs)
+  $('#update-appliance').on('submit', searchEvents.onUpdateLabs)
+  $('#destroy-appliance').on('submit', searchEvents.onDestroyLabs)
 })
