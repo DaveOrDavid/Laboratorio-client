@@ -1,22 +1,58 @@
+
+<!-- GET show all appliances -->
 {{#each appliances as |appliance|}}
-  {{log appliance}}
+  <!-- {{log appliance}} -->
   <section data-id="{{appliance.id}}">
     <h6>Part:</h6>
-    <h3>
+    <div>
+      <li>
       <!-- {{limit appliance.part_number 15}} -->
       <!-- unsure how to use limit  -->
-      {{appliance.part_number}}
-    </h2>
+      {{#if appliance.part_number}}
+        {{appliance.part_number}}
+      {{else}}
+        No part_number provided.
+      {{/if}}
+      </li>
+    </div>
     <h6>Location:</h6>
-    <p>
+    <div>
+      <li>
       {{#if appliance.location}}
         {{appliance.location}}
       {{else}}
-        No author provided.
+        No location provided.
       {{/if}}
-    </p>
+      </li>
+    </div>
+    <h6>Image URL:</h6>
+    <div>
+      <li>
+      {{#if appliance.image_url}}
+        {{appliance.image_url}}
+      {{else}}
+        No image provided.
+      {{/if}}
+      </li>
+    </div>
     <button data-id="{{appliance.id}}" class="btn btn-danger remove-appliance">Remove Appliance</button>
     <!-- {{> partial}} -->
   </section>
+
+<!-- PATCH update-->
+    <h6>Update Appliance</h6>
+      <div class="message-box"></div>
+        <form class="update-form" data-id="{{appliance.id}}">
+          <input name="appliance[location]" value="{{appliance.location}}" type="text" data-id={{"appliance.id"}}></input>
+
+          <input name="appliance[part_number]" value="{{appliance.part_number}}" type="text" data-id="{{appliance.id}}"></input>
+
+          <input name="appliance[image_url]" value="{{appliance.image_url}}" type="text" data-id="{{appliance.id}}"></input>
+          <button data-id="{{appliance.id}}" class="editButton btn btn-primary">Update Appliance</button>
+        </form>
+
+<!-- DELETE destroy appliance -->
+          <button type="button" data-id="{{appliance.id}}" class="btn btn-danger remove-appliance">Delete Appliance</button>
+
 
 {{/each}}

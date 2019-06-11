@@ -48,36 +48,37 @@
               <form id='show-labs'>
                 <h3>Show All Appliances</h3>
                   <input type="submit" value="Show All Appliances"></input>
+
                 <!-- <form id='search'> // wrapped for jQuery hide()-->
               </form>
 
               <form id='add-appliance'>
                 <h3>Add Appliance</h3>
-                <input type="text" name="location" placeholder="Location"> <input type="text" name="part_number" placeholder="Part Number"> <input type="text" name="image_url" placeholder="Image URL">
+                <input type="text" name="appliance[location]" placeholder="Location">
+                <input type="text" name="appliance[part_number]" placeholder="Part Number">
+                <input type="text" name="appliance[image_url]" placeholder="Image URL">
                 <input type="submit" value="Create Appliance"></input>
               </form>
 
               <form id='update-appliance'>
                 <h3>Update Appliance</h3>
-                <input type="integer" name="id" placeholder="Appliance ID" required> <input type="text" name="location" placeholder="Location" required> <input type="text" name="part_number" placeholder="Part Number" required> <input type="text" name="image_url" placeholder="Image URL" required>
+                <input type="integer" name="id" placeholder="Appliance ID" required>
+                <input type="text" name="appliance[location]" placeholder="Location" required>
+                <input type="text" name="appliance[part_number]" placeholder="Part Number" required>
+                <input type="text" name="appliance[image_url]" placeholder="Image URL" required>
                 <input type="submit" value="Update Appliance"></input>
               </form>
 
               <form id='destroy-appliance'>
                 <h3>Delete Appliance</h3>
                 <input type="integer" name="id" placeholder="Appliance ID" required>
-                <input type="submit" value="Update Appliance"></input>
+                <input type="submit" value="Delete Appliance"></input>
               </form>
 
               <!-- Start Handlebars code -->
-              <div id="content" class="content"></div>
+              <div id="content"> </div>
               <!-- End Handlebars code -->
 
-              <form id='user-stats'>
-              <h3>User Stats</h3>
-                <!-- <form id='user-stats'> // wrapped for jQuery hide()-->
-                  <input type="submit" value="User Stats"/>
-              </form>
             </div>
             </nav>
         </header>
