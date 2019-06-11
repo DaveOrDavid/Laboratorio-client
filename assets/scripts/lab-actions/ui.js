@@ -9,6 +9,9 @@ const onAddLabsSuccess = responseData => {
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#sign-up').trigger('reset')
+  $('#sign-in').trigger('reset')
+  $('#change-pw').trigger('reset')
+  $('#add-appliance').trigger('reset')
 }
 
 const onAddLabsFailure = responseData => {
@@ -16,6 +19,9 @@ const onAddLabsFailure = responseData => {
   $('#message').text('create/add appliance failure')
   $('#message').addClass('failure')
   $('#sign-up').trigger('reset')
+  $('#sign-in').trigger('reset')
+  $('#change-pw').trigger('reset')
+  $('#add-appliance').trigger('reset')
 }
 
 const onShowLabsSuccess = responseData => {
@@ -25,6 +31,9 @@ const onShowLabsSuccess = responseData => {
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#sign-up').trigger('reset')
+  $('#sign-in').trigger('reset')
+  $('#change-pw').trigger('reset')
+  $('#add-appliance').trigger('reset')
   $('#content').html(applianceHtml)
 }
 
@@ -33,6 +42,9 @@ const onShowLabsFailure = responseData => {
   $('#message').text('Show labs failure')
   $('#message').addClass('failure')
   $('#sign-up').trigger('reset')
+  $('#sign-in').trigger('reset')
+  $('#change-pw').trigger('reset')
+  $('#add-appliance').trigger('reset')
 }
 
 const onUpdateLabsSuccess = responseData => {
@@ -42,6 +54,9 @@ const onUpdateLabsSuccess = responseData => {
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#sign-up').trigger('reset')
+  $('#sign-in').trigger('reset')
+  $('#change-pw').trigger('reset')
+  $('#add-appliance').trigger('reset')
   $('#content').html(applianceHtml)
 }
 
@@ -50,6 +65,9 @@ const onUpdateLabsFailure = responseData => {
   $('#message').text('update labs failure')
   $('#message').addClass('failure')
   $('#sign-up').trigger('reset')
+  $('#sign-in').trigger('reset')
+  $('#change-pw').trigger('reset')
+  $('#add-appliance').trigger('reset')
 }
 
 const onDestroyLabsSuccess = responseData => {
@@ -59,6 +77,9 @@ const onDestroyLabsSuccess = responseData => {
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#sign-up').trigger('reset')
+  $('#sign-in').trigger('reset')
+  $('#change-pw').trigger('reset')
+  $('#add-appliance').trigger('reset')
   // $('#content').html(applianceHtml)
 }
 
@@ -67,6 +88,9 @@ const onDestroyLabsFailure = responseData => {
   $('#message').text('destroy labs failure')
   $('#message').addClass('failure')
   $('#sign-up').trigger('reset')
+  $('#sign-in').trigger('reset')
+  $('#change-pw').trigger('reset')
+  $('#add-appliance').trigger('reset')
 }
 
 module.exports = {

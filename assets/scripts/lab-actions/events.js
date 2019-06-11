@@ -8,7 +8,7 @@ const onAddLabs = (event) => {
   const formData = getFormFields(form)
   console.log('formData is ', formData)
   api.postLabs(formData)
-    .then(console.log('onShowLabs is working'))
+    // .then(console.log('onShowLabs is working'))
     .then(ui.onAddLabsSuccess)
     .catch(ui.onAddLabsFailure)
 }
@@ -19,7 +19,7 @@ const onShowLabs = (event) => {
   const formData = getFormFields(form)
   console.log('formData is ' + formData)
   api.getLabs(formData)
-    .then(console.log('onShowLabs is working'))
+    // .then(console.log('onShowLabs is working'))
     .then(ui.onShowLabsSuccess)
     .catch(ui.onShowLabsFailure)
 }
@@ -32,18 +32,18 @@ const onUpdateLabs = (event) => {
   console.log('formData is ', formData)
   console.log('id is ', id)
   api.patchLabs(formData, id)
-    .then(console.log('onUpdateLabs is working'))
+    // .then(console.log('onUpdateLabs is working'))
     .then(ui.onUpdateLabsSuccess)
     .catch(ui.onUpdateLabsFailure)
 }
 
 const onDestroyLabs = (event) => {
   event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
-  console.log('formData is ', formData)
-  api.delLabs(formData)
-    .then(console.log('onDestroyLabs is working'))
+  const id = $(event.target).data('id')
+  // const form = event.target
+  // const formData = getFormFields(form)
+  api.delLabs(id)
+    // .then(console.log('onDestroyLabs is working'))
     .then(ui.onDestroyLabsSuccess)
     .catch(ui.onDestroyLabsFailure)
 }

@@ -6,13 +6,24 @@ const onSignUpSuccess = responseData => {
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#sign-up').trigger('reset')
+  $('#sign-in').trigger('reset')
+  $('#change-pw').trigger('reset')
+  $('#add-appliance').trigger('reset')
+  $('.in-app').hide()
+  $('.launch-auth').show()
 }
 
 const onSignUpFailure = responseData => {
   console.log('sign up failure', responseData)
+  $('#message').text('Sign Up attempt failed')
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#sign-up').trigger('reset')
+  $('#sign-in').trigger('reset')
+  $('#change-pw').trigger('reset')
+  $('#add-appliance').trigger('reset')
+  $('.in-app').hide()
+  $('.launch-auth').show()
 }
 
 const onSignInSuccess = responseData => {
@@ -20,28 +31,64 @@ const onSignInSuccess = responseData => {
   $('#message').text('Signed in successfully to Laborator.io')
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('#sign-up').trigger('reset')
   $('#sign-in').trigger('reset')
+  $('#change-pw').trigger('reset')
+  $('#add-appliance').trigger('reset')
+  $('.in-app').show()
+  $('.launch-auth').hide()
   store.user = responseData.user
 }
 
 const onSignInFailure = responseData => {
   console.log('sign in failure', responseData)
+  $('#message').text('Sign in failure')
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('#sign-up').trigger('reset')
   $('#sign-in').trigger('reset')
+  $('#change-pw').trigger('reset')
+  $('#add-appliance').trigger('reset')
+  $('.in-app').hide()
+  $('.launch-auth').show()
 }
 
 const onChangePasswordSuccess = responseData => {
   console.log('change password success', responseData)
   $('#message').text('Password changed successfully')
   $('#message').removeClass()
+  $('#sign-up').trigger('reset')
+  $('#sign-in').trigger('reset')
   $('#change-pw').trigger('reset')
+  $('#add-appliance').trigger('reset')
 }
 
 const onChangePasswordFailure = responseData => {
   console.log('change password failure', responseData)
+  $('#message').text('Change password attempt failed')
   $('#message').removeClass()
+  $('#sign-up').trigger('reset')
+  $('#sign-in').trigger('reset')
   $('#change-pw').trigger('reset')
+  $('#add-appliance').trigger('reset')
+}
+
+const onSignOutSuccess = responseData => {
+  $('#message').text('Signed out succesfully, goodbye!')
+  $('#message').removeClass()
+  $('#sign-up').trigger('reset')
+  $('#sign-in').trigger('reset')
+  $('#change-pw').trigger('reset')
+  $('#add-appliance').trigger('reset')
+}
+
+const onSignOutFailure = responseData => {
+  $('#message').text('Sign out failure')
+  $('#message').removeClass()
+  $('#sign-up').trigger('reset')
+  $('#sign-in').trigger('reset')
+  $('#change-pw').trigger('reset')
+  $('#add-appliance').trigger('reset')
 }
 
 module.exports = {
@@ -50,5 +97,7 @@ module.exports = {
   onSignInSuccess,
   onSignInFailure,
   onChangePasswordSuccess,
-  onChangePasswordFailure
+  onChangePasswordFailure,
+  onSignOutSuccess,
+  onSignOutFailure
 }

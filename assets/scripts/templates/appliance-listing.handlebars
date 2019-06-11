@@ -1,7 +1,7 @@
 
 <!-- GET show all appliances -->
 {{#each appliances as |appliance|}}
-  <!-- {{log appliance}} -->
+  {{log appliance}}
   <section data-id="{{appliance.id}}">
     <h6>ID:</h6>
     <div>
@@ -51,17 +51,16 @@
     <h6>Update Appliance</h6>
       <div class="message-box"></div>
         <form class="update-form" data-id="{{appliance.id}}">
-          <div data-id="{{appliance.id}}"></div>
-          <input name="appliance[location]" value="{{appliance.location}}" type="text" data-id={{"appliance.id"}}></input>
+          <input name="appliance[location]" value="{{appliance.location}}" type="text" data-id={{"appliance.id"}}>
 
-          <input name="appliance[part_number]" value="{{appliance.part_number}}" type="text" data-id="{{appliance.id}}"></input>
+          <input name="appliance[part_number]" value="{{appliance.part_number}}" type="text" data-id="{{appliance.id}}">
 
-          <input name="appliance[image_url]" value="{{appliance.image_url}}" type="text" data-id="{{appliance.id}}"></input>
-          <button data-id="{{appliance.id}}" class="editButton btn btn-primary">Update Appliance</button>
+          <input name="appliance[image_url]" value="{{appliance.image_url}}" type="text" data-id="{{appliance.id}}">
+          <input type="submit" data-id="{{appliance.id}}" class="editButton btn btn-primary" value="Update Appliance"/>
         </form>
 
 <!-- DELETE destroy appliance -->
-          <button type="button" data-id="{{appliance.id}}" class="btn btn-danger remove-appliance">Delete Appliance</button>
+      <button type="button" data-id="{{appliance.id}}" class="btn btn-danger remove-appliance">Delete Appliance</button>
 
 
 {{/each}}

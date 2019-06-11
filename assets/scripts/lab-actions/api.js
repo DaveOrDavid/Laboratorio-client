@@ -40,14 +40,14 @@ const patchLabs = (formData, id) => {
   })
 }
 
-const delLabs = (formData) => {
+const delLabs = (id) => {
   return $.ajax({
-    url: config.apiUrl + '/appliances/' + formData.id,
+    url: config.apiUrl + '/appliances/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    data: formData
+    }
+    // data: id
   })
 }
 
