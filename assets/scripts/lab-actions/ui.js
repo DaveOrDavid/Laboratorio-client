@@ -1,7 +1,8 @@
 'use strict'
 
-const store = require('../store')
+// const store = require('../store')
 const applianceTemplate = require('../templates/appliance-listing.handlebars')
+const messageCheck = require('./events.js')
 
 const onAddLabsSuccess = responseData => {
   console.log('create/add appliance success', responseData)
@@ -24,17 +25,37 @@ const onAddLabsFailure = responseData => {
   $('#add-appliance').trigger('reset')
 }
 
-const onShowLabsSuccess = responseData => {
-  console.log('show all success', responseData)
-  const applianceHtml = applianceTemplate({ appliances: responseData.appliances })
-  $('#message').text('Show labs success')
-  $('#message').removeClass()
-  $('#message').addClass('success')
-  $('#sign-up').trigger('reset')
-  $('#sign-in').trigger('reset')
-  $('#change-pw').trigger('reset')
-  $('#add-appliance').trigger('reset')
-  $('#content').html(applianceHtml)
+// const onOnlyShowLabsSuccess = responseData => {
+//   console.log('show labs success', responseData)
+//   const applianceHtml = applianceTemplate({ appliances: responseData.appliances })
+//   $('#message').text('Show labs success')
+//   $('#message').removeClass()
+//   $('#message').addClass('success')
+//   $('#sign-up').trigger('reset')
+//   $('#sign-in').trigger('reset')
+//   $('#change-pw').trigger('reset')
+//   $('#add-appliance').trigger('reset')
+//   $('#content').html(applianceHtml)
+// }
+
+const onShowLabsSuccess = function (data, responseData) {
+  console.log('show labs success', responseData)
+  // const applianceHtml = applianceTemplate({ appliances: responseData.appliances })
+  if (data === 'update') {
+    onUpdateLabsSuccess()
+  } else if (data === 'delete') {
+    onDestroyLabsSuccess()
+  } else {
+    const applianceHtml = applianceTemplate({ appliances: responseData.appliances })
+    $('#message').text('Success')
+    $('#message').removeClass()
+    $('#message').addClass('success')
+    $('#sign-up').trigger('reset')
+    $('#sign-in').trigger('reset')
+    $('#change-pw').trigger('reset')
+    $('#add-appliance').trigger('reset')
+    $('#content').html(applianceHtml)
+  }
 }
 
 const onShowLabsFailure = responseData => {
@@ -49,7 +70,7 @@ const onShowLabsFailure = responseData => {
 
 const onUpdateLabsSuccess = responseData => {
   console.log('update labs success', responseData)
-  const applianceHtml = applianceTemplate({ appliances: responseData.appliances })
+  // const applianceHtml = applianceTemplate({ appliances: responseData.appliances })
   $('#message').text('update labs success')
   $('#message').removeClass()
   $('#message').addClass('success')
@@ -57,7 +78,7 @@ const onUpdateLabsSuccess = responseData => {
   $('#sign-in').trigger('reset')
   $('#change-pw').trigger('reset')
   $('#add-appliance').trigger('reset')
-  $('#content').html(applianceHtml)
+  // $('#content').html(applianceHtml)
 }
 
 const onUpdateLabsFailure = responseData => {
@@ -70,10 +91,20 @@ const onUpdateLabsFailure = responseData => {
   $('#add-appliance').trigger('reset')
 }
 
+const onClearLabsSuccess = () => {
+  console.log('Clear Labs successful')
+  $('#message').text('Appliance listings cleared')
+  $('#message').removeClass()
+  $('#message').addClass('success')
+  $('#content').empty()
+  $('#change-pw').trigger('reset')
+  $('#add-appliance').trigger('reset')
+}
+
 const onDestroyLabsSuccess = responseData => {
   console.log('destroy labs success', responseData)
   // const applianceHtml = applianceTemplate({ appliances: responseData.appliances })
-  $('#message').text('destroy labs success')
+  $('#message').text('Destroy labs success')
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#sign-up').trigger('reset')
@@ -85,8 +116,9 @@ const onDestroyLabsSuccess = responseData => {
 
 const onDestroyLabsFailure = responseData => {
   console.log('destroy labs failure', responseData)
-  $('#message').text('destroy labs failure')
-  $('#message').addClass('failure')
+  $('#message').text('Destroy labs failure')
+  $('#message').removeClass()
+  $('#message').addClass('success')
   $('#sign-up').trigger('reset')
   $('#sign-in').trigger('reset')
   $('#change-pw').trigger('reset')
@@ -101,5 +133,6 @@ module.exports = {
   onUpdateLabsSuccess,
   onUpdateLabsFailure,
   onDestroyLabsSuccess,
-  onDestroyLabsFailure
+  onDestroyLabsFailure,
+  onClearLabsSuccess
 }
