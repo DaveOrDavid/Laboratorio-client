@@ -11,6 +11,7 @@ const onSignUpSuccess = responseData => {
   $('#add-appliance').trigger('reset')
   $('.in-app').hide()
   $('.launch-auth').show()
+  $('#content').empty()
 }
 
 const onSignUpFailure = responseData => {
@@ -37,6 +38,7 @@ const onSignInSuccess = responseData => {
   $('#add-appliance').trigger('reset')
   $('.in-app').show()
   $('.launch-auth').hide()
+  $('#content').empty()
   store.user = responseData.user
 }
 
@@ -80,6 +82,9 @@ const onSignOutSuccess = responseData => {
   $('#sign-in').trigger('reset')
   $('#change-pw').trigger('reset')
   $('#add-appliance').trigger('reset')
+  $('.in-app').hide()
+  $('.launch-auth').show()
+  $('#content').empty()
 }
 
 const onSignOutFailure = responseData => {
@@ -89,6 +94,8 @@ const onSignOutFailure = responseData => {
   $('#sign-in').trigger('reset')
   $('#change-pw').trigger('reset')
   $('#add-appliance').trigger('reset')
+  $('.in-app').show()
+  $('.launch-auth').hide()
 }
 
 module.exports = {

@@ -51,12 +51,12 @@
     <h6>Update Appliance</h6>
       <div class="message-box"></div>
         <form class="update-form" data-id="{{appliance.id}}">
-          <input name="appliance[location]" value="{{appliance.location}}" type="text" data-id={{"appliance.id"}}>
+          <input name="appliance[location]" value="{{appliance.location}}" type="text" data-id="{{appliance.id}}" required>
 
-          <input name="appliance[part_number]" value="{{appliance.part_number}}" type="text" data-id="{{appliance.id}}">
+          <input name="appliance[part_number]" value="{{appliance.part_number}}" type="text" data-id="{{appliance.id}}" required>
 
-          <input name="appliance[image_url]" value="{{appliance.image_url}}" type="text" data-id="{{appliance.id}}">
-          <input type="submit" data-id="{{appliance.id}}" class="editButton btn btn-primary" value="Update Appliance"/>
+          <input name="appliance[image_url]" value="{{appliance.image_url}}" type="text" data-id="{{appliance.id}}" required>
+          <input type="submit" data-id="{{appliance.id}}" class="editButton btn btn-secondary" value="Update Appliance">
         </form>
 
 <!-- DELETE destroy appliance -->
