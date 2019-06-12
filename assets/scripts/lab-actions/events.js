@@ -44,8 +44,8 @@ const onUpdateLabs = (event) => {
   const form = event.target
   const formData = getFormFields(form)
   const messageCheck = 'update'
-  console.log('formData is ', formData)
-  console.log('id is ', id)
+  // console.log('formData is ', formData)
+  // console.log('id is ', id)
   api.patchLabs(formData, id)
     .then(reShowLabs => {
       onShowLabs(event, messageCheck)
