@@ -1,7 +1,7 @@
 const store = require('../store.js')
 
 const onSignUpSuccess = responseData => {
-  console.log('sign up success', responseData)
+  // console.log('sign up success', responseData)
   $('#message').text('Sign up successful. Please sign into Laborator.io')
   $('#message').removeClass()
   $('#message').addClass('success')
@@ -15,7 +15,7 @@ const onSignUpSuccess = responseData => {
 }
 
 const onSignUpFailure = responseData => {
-  console.log('sign up failure', responseData)
+  // console.log('sign up failure', responseData)
   $('#message').text('Sign Up attempt failed')
   $('#message').removeClass()
   $('#message').addClass('success')
@@ -28,7 +28,7 @@ const onSignUpFailure = responseData => {
 }
 
 const onSignInSuccess = responseData => {
-  console.log('sign in success', responseData)
+  // console.log('sign in success', responseData)
   $('#message').text('Signed in successfully to Laborator.io')
   $('#message').removeClass()
   $('#message').addClass('success')
@@ -43,7 +43,7 @@ const onSignInSuccess = responseData => {
 }
 
 const onSignInFailure = responseData => {
-  console.log('sign in failure', responseData)
+  // console.log('sign in failure', responseData)
   $('#message').text('Sign in failure')
   $('#message').removeClass()
   $('#message').addClass('success')
@@ -56,7 +56,7 @@ const onSignInFailure = responseData => {
 }
 
 const onChangePasswordSuccess = responseData => {
-  console.log('change password success', responseData)
+  // console.log('change password success', responseData)
   $('#message').text('Password changed successfully')
   $('#message').removeClass()
   $('#sign-up').trigger('reset')
@@ -66,7 +66,7 @@ const onChangePasswordSuccess = responseData => {
 }
 
 const onChangePasswordFailure = responseData => {
-  console.log('change password failure', responseData)
+  // console.log('change password failure', responseData)
   $('#message').text('Change password attempt failed')
   $('#message').removeClass()
   $('#sign-up').trigger('reset')

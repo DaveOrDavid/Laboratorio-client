@@ -7,7 +7,6 @@
 // require('./example')
 const authEvents = require('./auth/events')
 const searchEvents = require('./lab-actions/events')
-// const handlebarEvents = require('./templates/appliance-listing.handlebars')
 
 $(() => {
   // authentication events on client side
