@@ -63,6 +63,7 @@ const onChangePasswordSuccess = responseData => {
   $('#sign-in').trigger('reset')
   $('#change-pw').trigger('reset')
   $('#add-appliance').trigger('reset')
+  $('.update-form').trigger('reset')
 }
 
 const onChangePasswordFailure = responseData => {
@@ -73,6 +74,7 @@ const onChangePasswordFailure = responseData => {
   $('#sign-in').trigger('reset')
   $('#change-pw').trigger('reset')
   $('#add-appliance').trigger('reset')
+  $('.update-form').trigger('reset')
 }
 
 const onSignOutSuccess = responseData => {
@@ -85,6 +87,7 @@ const onSignOutSuccess = responseData => {
   $('.in-app').hide()
   $('.launch-auth').show()
   $('#content').empty()
+  $('.update-form').trigger('reset')
 }
 
 const onSignOutFailure = responseData => {
@@ -96,6 +99,7 @@ const onSignOutFailure = responseData => {
   $('#add-appliance').trigger('reset')
   $('.in-app').show()
   $('.launch-auth').hide()
+  $('.update-form').trigger('reset')
 }
 
 module.exports = {

@@ -23,6 +23,8 @@ $(() => {
   // $('#destroy-appliance').on('submit', searchEvents.onDestroyLabs)
   $('.content').on('submit', '.update-form', searchEvents.onUpdateLabs)
   $('.content').on('click', '.remove-appliance', searchEvents.onDestroyLabs)
+  // $('.content').on('click', '.remove-appliance', searchEvents.onShowLabs)
   // ^^ access parent for Handlbars tbd
-  $('#clearLabsButton').on('click', searchEvents.onClearLabs)
+  $('.content').on('click', '.clearLabsButton', searchEvents.onClearLabs)
+  // $('.clearLabsButton').on('click', searchEvents.onClearLabs)
 })
