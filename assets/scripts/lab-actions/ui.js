@@ -109,7 +109,7 @@ const onClearLabsSuccess = () => {
 }
 
 const onDestroyLabsSuccess = responseData => {
-  console.log('destroy labs success', responseData)
+  // console.log('destroy labs success', responseData)
   // const applianceHtml = applianceTemplate({ appliances: responseData.appliances })
   // $('#content').html(applianceHtml)
   $('#message').text('Destroy Appliance success. Click Show All Appliances to see')
