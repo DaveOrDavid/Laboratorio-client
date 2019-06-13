@@ -1,5 +1,8 @@
 
 <!-- GET show all appliances -->
+<!-- <div> -->
+  <!-- <button class="btn btn-outline-warning clearLabsButton">Clear Appliances</button> -->
+
 {{#each appliances as |appliance|}}
   {{log appliance}}
   <section data-id="{{appliance.id}}">
@@ -39,24 +42,35 @@
       {{#if appliance.image_url}}
         {{appliance.image_url}}
       {{else}}
-        No image provided.
+        No url provided.
       {{/if}}
     </p>
     </div>
+    <!-- <h6>Image</h6>
+    <div>
+      <p>
+      {{#if appliance.image_url}}
+        <img src="{{appliance.image_url}}">
+      {{else}}
+        No image provided.
+      {{/if}}
+    </p>
+    </div> -->
     <!-- <button data-id="{{appliance.id}}" class="btn btn-danger remove-appliance">Remove Appliance</button> -->
     <!-- {{> partial}} -->
   </section>
+<!-- </div> -->
 
 <!-- PATCH update-->
     <h6>Update Appliance</h6>
       <div class="message-box"></div>
         <form class="update-form" data-id="{{appliance.id}}">
-          <input name="appliance[location]" value="{{appliance.location}}" type="text" data-id="{{appliance.id}}" required>
+          <input name="appliance[location]" value="" type="text" data-id="{{appliance.id}}" required>
 
-          <input name="appliance[part_number]" value="{{appliance.part_number}}" type="text" data-id="{{appliance.id}}" required>
+          <input name="appliance[part_number]" value="" type="text" data-id="{{appliance.id}}" required>
 
-          <input name="appliance[image_url]" value="{{appliance.image_url}}" type="text" data-id="{{appliance.id}}" required>
-          <input type="submit" data-id="{{appliance.id}}" class="editButton btn btn-secondary" value="Update Appliance">
+          <input name="appliance[image_url]" value="" type="text" data-id="{{appliance.id}}" required>
+          <input type="submit" data-id="" class="editButton btn btn-secondary" value="Update Appliance">
         </form>
 
 <!-- DELETE destroy appliance -->

@@ -1,37 +1,27 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
-
-// const update = console.log('update has run')
-// const remove = console.log('delete has run')
+// const appliance = require('../templates/appliance-listing.handlebars')
 
 const onAddLabs = (event) => {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  console.log('formData is ', formData)
   api.postLabs(formData)
     .then(ui.onAddLabsSuccess)
     .catch(ui.onAddLabsFailure)
 }
 
-// const onOnlyShowLabs = (event) => {
-//   event.preventDefault()
-//   const form = event.target
-//   const formData = getFormFields(form)
-//   // console.log('formData is ' + formData)
-//   api.getLabs(formData)
-//     .then(ui.onOnlyShowLabsSuccess)
-//     .catch(ui.onShowLabsFailure)
-// }
-
 const onShowLabs = (event, messageCheck) => {
   event.preventDefault()
+  // console.log('onShowLabs is working ', data.appliance.length)
+  // if ($('content') === '') {
+  //   $('#message').text('No items to show, click Create Appliance to add one')
+  // } else {
   const form = event.target
   const formData = getFormFields(form)
   // console.log('formData is ' + formData)
   api.getLabs(formData)
-    // .then(ui.onShowLabsSuccess(messageCheck))
     .then(data => {
       ui.onShowLabsSuccess(messageCheck, data)
     })
@@ -50,7 +40,7 @@ const onUpdateLabs = (event) => {
     .then(reShowLabs => {
       onShowLabs(event, messageCheck)
     })
-    .then(ui.onUpdateLabsSuccess)
+    // .then(ui.onUpdateLabsSuccess)
     .catch(ui.onUpdateLabsFailure)
 }
 
@@ -64,16 +54,15 @@ const onDestroyLabs = (event) => {
   const id = $(event.target).data('id')
   const messageCheck = 'delete'
   api.delLabs(id)
+    // .then(ui.onDestroyLabsSuccess)
     .then(reShowLabs => {
       onShowLabs(event, messageCheck)
     })
-    // .then(ui.onDestroyLabsSuccess)
     .catch(ui.onDestroyLabsFailure)
 }
 
 module.exports = {
   onShowLabs,
-  // onOnlyShowLabs,
   onUpdateLabs,
   onAddLabs,
   onDestroyLabs,
