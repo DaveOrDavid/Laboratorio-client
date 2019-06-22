@@ -7,6 +7,7 @@
 // require('./example')
 const authEvents = require('./auth/events')
 const searchEvents = require('./lab-actions/events')
+const toolEvents = require('./tool-actions/events')
 
 $(() => {
   // authentication events on client side
@@ -14,19 +15,16 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#sign-out').on('submit', authEvents.onSignOut)
   $('#change-pw').on('submit', authEvents.onChangePassword)
-  // database search events on client side
+  // events on Appliance database side
   $('#add-appliance').on('submit', searchEvents.onAddLabs)
   $('#show-labs').on('submit', searchEvents.onShowLabs)
-  $('#add-tool').on('submit', searchEvents.onAddTools)
-  $('#show-tools').on('submit', searchEvents.onShowTools)
-  // $('#update-appliance').on('submit', searchEvents.onUpdateLabs)
-  // $('#update-form').on('submit', handlebarEvents.onUpdateLabs)
-  // thought I needed to require Handlebar file in app file.
-  // $('#destroy-appliance').on('submit', searchEvents.onDestroyLabs)
   $('.content').on('submit', '.update-form', searchEvents.onUpdateLabs)
   $('.content').on('click', '.remove-appliance', searchEvents.onDestroyLabs)
-  // $('.content').on('click', '.remove-appliance', searchEvents.onShowLabs)
-  // ^^ access parent for Handlbars tbd
   $('.content').on('click', '.clearLabsButton', searchEvents.onClearLabs)
-  // $('.clearLabsButton').on('click', searchEvents.onClearLabs)
+  // events on Tools database side
+  $('#add-tool').on('submit', toolEvents.onAddTools)
+  $('#show-tools').on('submit', toolEvents.onShowTools)
+  $('.content').on('submit', '.update-toolForm', toolEvents.onUpdateTools)
+  $('.content').on('click', '.remove-tool', toolEvents.onDestroyTools)
+  $('.content').on('click', '.clearToolsButton', toolEvents.onClearTools)
 })

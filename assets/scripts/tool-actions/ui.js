@@ -16,6 +16,10 @@ const onAddToolsSuccess = responseData => {
   $('#sign-up').trigger('reset')
   $('#sign-in').trigger('reset')
   $('#change-pw').trigger('reset')
+  // tool database actions
+  $('#add-tool').trigger('reset')
+  $('.update-toolForm').trigger('reset')
+  // appliance database actions
   $('#add-appliance').trigger('reset')
   $('.update-form').trigger('reset')
   $('#content').hide()
@@ -29,8 +33,12 @@ const onAddToolsFailure = responseData => {
   $('#sign-up').trigger('reset')
   $('#sign-in').trigger('reset')
   $('#change-pw').trigger('reset')
+  // appliance database actions
   $('#add-appliance').trigger('reset')
   $('.update-form').trigger('reset')
+  // tool database actions
+  $('#add-tool').trigger('reset')
+  $('.update-toolForm').trigger('reset')
 }
 
 const onShowToolsSuccess = function (data, responseData) {
@@ -48,8 +56,12 @@ const onShowToolsSuccess = function (data, responseData) {
       $('#message').removeClass()
       $('#message').addClass('success')
       $('#change-pw').trigger('reset')
+      // appliance database actions
       $('#add-appliance').trigger('reset')
       $('.update-form').trigger('reset')
+      // tool database actions
+      $('#add-tool').trigger('reset')
+      $('.update-toolForm').trigger('reset')
       $('#content').show()
       $('#content').html(toolHtml)
     } else {
@@ -57,10 +69,14 @@ const onShowToolsSuccess = function (data, responseData) {
       $('#message').removeClass()
       $('#message').addClass('success')
       $('#change-pw').trigger('reset')
+      // appliance database actions
       $('#add-appliance').trigger('reset')
       $('.update-form').trigger('reset')
+      // tool database actions
+      $('#add-tool').trigger('reset')
+      $('.update-toolForm').trigger('reset')
       $('#content').show()
-      $('#content').html(tooleHtml)
+      $('#content').html(toolHtml)
     }
   }
 }
@@ -70,8 +86,12 @@ const onShowToolsFailure = responseData => {
   $('#message').text('Show Tool failure')
   $('#message').addClass('failure')
   $('#change-pw').trigger('reset')
+  // appliance database actions
   $('#add-appliance').trigger('reset')
   $('.update-form').trigger('reset')
+  // tool database actions
+  $('#add-tool').trigger('reset')
+  $('.update-toolForm').trigger('reset')
 }
 
 const onUpdateToolsSuccess = responseData => {
@@ -82,8 +102,12 @@ const onUpdateToolsSuccess = responseData => {
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#change-pw').trigger('reset')
+  // appliance database actions
   $('#add-appliance').trigger('reset')
   $('.update-form').trigger('reset')
+  // tool database actions
+  $('#add-tool').trigger('reset')
+  $('.update-toolForm').trigger('reset')
   $('#content').hide()
   // $('#content').html(applianceHtml)
 }
@@ -93,8 +117,12 @@ const onUpdateToolsFailure = responseData => {
   $('#message').text('Update Tool failure')
   $('#message').addClass('failure')
   $('#change-pw').trigger('reset')
+  // appliance database actions
   $('#add-appliance').trigger('reset')
   $('.update-form').trigger('reset')
+  // tool database actions
+  $('#add-tool').trigger('reset')
+  $('.update-toolForm').trigger('reset')
 }
 
 const onClearToolsSuccess = () => {
@@ -104,8 +132,12 @@ const onClearToolsSuccess = () => {
   $('#message').addClass('success')
   $('#content').empty()
   $('#change-pw').trigger('reset')
+  // appliance database actions
   $('#add-appliance').trigger('reset')
   $('.update-form').trigger('reset')
+  // tool database actions
+  $('#add-tool').trigger('reset')
+  $('.update-toolForm').trigger('reset')
 }
 
 const onDestroyToolsSuccess = responseData => {
@@ -116,8 +148,12 @@ const onDestroyToolsSuccess = responseData => {
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#change-pw').trigger('reset')
+  // appliance database actions
   $('#add-appliance').trigger('reset')
   $('.update-form').trigger('reset')
+  // tool database actions
+  $('#add-tool').trigger('reset')
+  $('.update-toolForm').trigger('reset')
   $('#content').hide()
   // $('#content').html(applianceHtml)
 }
@@ -128,8 +164,12 @@ const onDestroyToolsFailure = responseData => {
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#change-pw').trigger('reset')
+  // appliance database actions
   $('#add-appliance').trigger('reset')
   $('.update-form').trigger('reset')
+  // tool database actions
+  $('#add-tool').trigger('reset')
+  $('.update-toolForm').trigger('reset')
 }
 
 module.exports = {

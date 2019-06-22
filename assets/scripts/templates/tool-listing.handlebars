@@ -1,6 +1,7 @@
 
 <!-- Tool handlebars -->
 {{#each tools as |tool|}}
+<!-- {{log tool}} -->
   <section data-id="{{tool.id}}">
     <h6>ID:</h6>
     <div>
@@ -37,7 +38,7 @@
   <!-- Tool PATCH update-->
       <h6>Update Tool</h6>
         <div class="message-box"></div>
-          <form class="update-form" data-id="{{tool.id}}">
+          <form class="update-toolForm" data-id="{{tool.id}}">
             <input name="tool[name]" value="" type="text" placeholder='Name' data-id="{{tool.id}}" required>
 
             <input name="tool[category]" value="" type="text" placeholder='Category' data-id="{{tool.id}}" required>

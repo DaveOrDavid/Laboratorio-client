@@ -7,7 +7,7 @@ const onAddTools = (event) => {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  api.postLabs(formData)
+  api.postTools(formData)
     .then(ui.onAddToolsSuccess)
     .catch(ui.onAddToolsFailure)
 }
