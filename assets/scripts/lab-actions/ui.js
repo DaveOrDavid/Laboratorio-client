@@ -16,6 +16,10 @@ const onAddLabsSuccess = responseData => {
   $('#sign-up').trigger('reset')
   $('#sign-in').trigger('reset')
   $('#change-pw').trigger('reset')
+  // tool database actions
+  $('#add-tool').trigger('reset')
+  $('.update-toolForm').trigger('reset')
+  // appliance database actions
   $('#add-appliance').trigger('reset')
   $('.update-form').trigger('reset')
   $('#content').hide()
@@ -29,6 +33,10 @@ const onAddLabsFailure = responseData => {
   $('#sign-up').trigger('reset')
   $('#sign-in').trigger('reset')
   $('#change-pw').trigger('reset')
+  // tool database actions
+  $('#add-tool').trigger('reset')
+  $('.update-toolForm').trigger('reset')
+  // appliance database actions
   $('#add-appliance').trigger('reset')
   $('.update-form').trigger('reset')
 }
@@ -48,6 +56,10 @@ const onShowLabsSuccess = function (data, responseData) {
       $('#message').removeClass()
       $('#message').addClass('success')
       $('#change-pw').trigger('reset')
+      // tool database actions
+      $('#add-tool').trigger('reset')
+      $('.update-toolForm').trigger('reset')
+      // appliance database actions
       $('#add-appliance').trigger('reset')
       $('.update-form').trigger('reset')
       $('#content').show()
@@ -57,6 +69,10 @@ const onShowLabsSuccess = function (data, responseData) {
       $('#message').removeClass()
       $('#message').addClass('success')
       $('#change-pw').trigger('reset')
+      // tool database actions
+      $('#add-tool').trigger('reset')
+      $('.update-toolForm').trigger('reset')
+      // appliance database actions
       $('#add-appliance').trigger('reset')
       $('.update-form').trigger('reset')
       $('#content').show()
@@ -70,6 +86,10 @@ const onShowLabsFailure = responseData => {
   $('#message').text('Show Appliance failure')
   $('#message').addClass('failure')
   $('#change-pw').trigger('reset')
+  // tool database actions
+  $('#add-tool').trigger('reset')
+  $('.update-toolForm').trigger('reset')
+  // appliance database actions
   $('#add-appliance').trigger('reset')
   $('.update-form').trigger('reset')
 }
@@ -82,6 +102,10 @@ const onUpdateLabsSuccess = responseData => {
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#change-pw').trigger('reset')
+  // tool database actions
+  $('#add-tool').trigger('reset')
+  $('.update-toolForm').trigger('reset')
+  // appliance database actions
   $('#add-appliance').trigger('reset')
   $('.update-form').trigger('reset')
   $('#content').hide()
@@ -93,6 +117,10 @@ const onUpdateLabsFailure = responseData => {
   $('#message').text('Update Appliance failure')
   $('#message').addClass('failure')
   $('#change-pw').trigger('reset')
+  // tool database actions
+  $('#add-tool').trigger('reset')
+  $('.update-toolForm').trigger('reset')
+  // appliance database actions
   $('#add-appliance').trigger('reset')
   $('.update-form').trigger('reset')
 }
@@ -104,6 +132,10 @@ const onClearLabsSuccess = () => {
   $('#message').addClass('success')
   $('#content').empty()
   $('#change-pw').trigger('reset')
+  // tool database actions
+  $('#add-tool').trigger('reset')
+  $('.update-toolForm').trigger('reset')
+  // appliance database actions
   $('#add-appliance').trigger('reset')
   $('.update-form').trigger('reset')
 }
@@ -116,6 +148,10 @@ const onDestroyLabsSuccess = responseData => {
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#change-pw').trigger('reset')
+  // tool database actions
+  $('#add-tool').trigger('reset')
+  $('.update-toolForm').trigger('reset')
+  // appliance database actions
   $('#add-appliance').trigger('reset')
   $('.update-form').trigger('reset')
   $('#content').hide()
@@ -128,6 +164,10 @@ const onDestroyLabsFailure = responseData => {
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#change-pw').trigger('reset')
+  // tool database actions
+  $('#add-tool').trigger('reset')
+  $('.update-toolForm').trigger('reset')
+  // appliance database actions
   $('#add-appliance').trigger('reset')
   $('.update-form').trigger('reset')
 }
