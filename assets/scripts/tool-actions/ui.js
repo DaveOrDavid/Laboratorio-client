@@ -52,7 +52,7 @@ const onShowToolsSuccess = function (data, responseData) {
     // const toolHtml = toolTemplate({ tools: responseData.tools })
     // console.log('responseData is ', responseData)
     if (responseData.tools.length === 0) {
-      $('#message').text('No items to show, click Create Appliance to add one')
+      $('#message').text('No items to show, click Create Tool to add one')
       $('#message').removeClass()
       $('#message').addClass('success')
       $('#change-pw').trigger('reset')
