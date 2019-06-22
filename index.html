@@ -47,13 +47,18 @@
                 <!-- <form id='sign-out'> // wrapped for jQuery hide()-->
                   <input type="submit" value="Sign Out" class="btn btn-outline-primary"/>
               </form>
+
+            <h3>Select a Database to View</h3>
               <form id='show-labs'>
-                <h3>Show All Appliances</h3>
+                <h3>Appliances wrap test</h3>
                   <input type="submit" value="Show All Appliances" class="btn btn-outline-primary"/>
-
-                <!-- <form id='search'> // wrapped for jQuery hide()-->
               </form>
-
+              <form id='show-tools'>
+                <!-- <h3>Tools</h3> -->
+                  <input type="submit" value="Show All Tools" class="btn btn-outline-primary"/>
+              </form>
+            </div>
+            <div class='in-app'>
               <form id='add-appliance'>
                 <h3>Add Appliance</h3>
                 <input type="text" name="appliance[location]" placeholder="Location" required>
@@ -62,6 +67,14 @@
                 <input type="submit" value="Create Appliance" class="btn btn-outline-primary"/>
               </form>
               <!-- <button id="clearLabsButton" class="btn btn-outline-primary">Clear Appliances</button> -->
+            </div>
+            <div class='in-app'>
+              <form id='add-tool'>
+                <h3>Add Tool</h3>
+                <input type="text" name="tool[name]" placeholder="Name" required/>
+                <input type="text" name="tool[category]" placeholder="Category" required/>
+                <input type="submit" value="Create Tool" class="btn btn-outline-primary"/>
+              </form>
             </div>
           </nav>
         </header>

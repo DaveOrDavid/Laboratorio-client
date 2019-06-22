@@ -17,6 +17,8 @@ $(() => {
   // database search events on client side
   $('#add-appliance').on('submit', searchEvents.onAddLabs)
   $('#show-labs').on('submit', searchEvents.onShowLabs)
+  $('#add-tool').on('submit', searchEvents.onAddTools)
+  $('#show-tools').on('submit', searchEvents.onShowTools)
   // $('#update-appliance').on('submit', searchEvents.onUpdateLabs)
   // $('#update-form').on('submit', handlebarEvents.onUpdateLabs)
   // thought I needed to require Handlebar file in app file.

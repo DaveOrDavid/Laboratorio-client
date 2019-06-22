@@ -1,0 +1,51 @@
+
+<!-- Tool handlebars -->
+{{#each tools as |tool|}}
+  <section data-id="{{tool.id}}">
+    <h6>ID:</h6>
+    <div>
+      <p>
+      {{#if tool.id}}
+        {{tool.id}}
+      {{else}}
+        No id provided.
+      {{/if}}
+    </p>
+    </div>
+    <h6>Name</h6>
+    <div>
+      <p>
+      {{#if tool.name}}
+        {{tool.name}}
+      {{else}}
+        No name provided.
+      {{/if}}
+    </p>
+    </div>
+    <h6>Category</h6>
+    <div>
+      <p>
+      {{#if tool.category}}
+        {{tool.category}}
+      {{else}}
+        No category provided.
+      {{/if}}
+    </p>
+    </div>
+  </section>
+
+  <!-- Tool PATCH update-->
+      <h6>Update Tool</h6>
+        <div class="message-box"></div>
+          <form class="update-form" data-id="{{tool.id}}">
+            <input name="tool[name]" value="" type="text" placeholder='Name' data-id="{{tool.id}}" required>
+
+            <input name="tool[category]" value="" type="text" placeholder='Category' data-id="{{tool.id}}" required>
+
+            <input type="submit" data-id="" class="editButton btn btn-secondary" value="Update Tool">
+          </form>
+
+  <!-- Tool DELETE destroy -->
+        <button type="button" data-id="{{tool.id}}" class="btn btn-danger remove-tool">Delete Tool</button>
+
+{{/each}}

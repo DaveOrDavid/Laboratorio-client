@@ -3,8 +3,9 @@
 <!-- <div> -->
   <!-- <button class="btn btn-outline-warning clearLabsButton">Clear Appliances</button> -->
 
+
 {{#each appliances as |appliance|}}
-  {{log appliance}}
+  <!-- {{log appliance}} -->
   <section data-id="{{appliance.id}}">
     <h6>ID:</h6>
     <div>
@@ -61,7 +62,8 @@
   </section>
 <!-- </div> -->
 
-<!-- PATCH update-->
+
+<!-- Appliance PATCH update-->
     <h6>Update Appliance</h6>
       <div class="message-box"></div>
         <form class="update-form" data-id="{{appliance.id}}">
@@ -73,8 +75,7 @@
           <input type="submit" data-id="" class="editButton btn btn-secondary" value="Update Appliance">
         </form>
 
-<!-- DELETE destroy appliance -->
+<!-- Appliance DELETE destroy appliance -->
       <button type="button" data-id="{{appliance.id}}" class="btn btn-danger remove-appliance">Delete Appliance</button>
-
 
 {{/each}}
