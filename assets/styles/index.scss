@@ -1,20 +1,24 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
+  background-color: #def0ef;
   border-style: double;
   border-color: blue;
   border-width: thick;
+  padding: 25px;
 }
 
 h1 {
+  font-family: 'Saira Semi Condensed', sans-serif;
   text-align: center;
 
 }
 
 h3 {
-  font-family: sans-serif;
+  font-family: 'Saira Semi Condensed', sans-serif;
   font-size: 30px;
   color: purple;
+
 }
 
 .in-app {
