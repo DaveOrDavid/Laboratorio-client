@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Laborator.io</title>
+      <style>
+      @import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed&display=swap');
+      </style>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+      <body>
+        <header>
+          <h1>Laborator.io</h1>
+          <!-- <h1><marquee direction="up">Laborator.io Set Up</marquee></h1> -->
+          <!-- marquee tag is for testing purposes and will be removed in production -->
+          <nav>
+            <div class='launch-auth'>
+              <form id='sign-up'>
+                <h3>Sign Up</h3>
+                <!-- <form id='sign-up'> // wrapped for jQuery hide()-->
+                  <input name="credentials[email]" type="text" placeholder='Enter New E-mail' required>
+                  <input name="credentials[password]" type="password" placeholder='Password' required>
+                  <input name="credentials[password_confirmation]" type="password" placeholder='Confirm Password' required>
+                  <input type="submit" value="Sign Up" class="btn btn-outline-primary">
+              </form>
+              <form id='sign-in'>
+                <h3>Sign In</h3>
+                <!-- <form id='sign-in'> // wrapped for jQuery hide()-->
+                  <input name="credentials[email]" type="text" placeholder='Email' required>
+                  <input name="credentials[password]" type="password" placeholder='Password' required>
+                  <input type="submit" value="Sign In" class="btn btn-outline-primary">
+              </form>
+            </div>
+            <div class='in-app'>
+              <form id='change-pw'>
+                <h3>Change Password</h3>
+                <!-- <form id='change-pw'> // wrapped for jQuery hide()-->
+                  <input type="password" name="passwords[old]" placeholder="Old Password" required>
+                  <input type="password" name="passwords[new]" placeholder="New Password" required>
+                  <input type="submit" value="Change Password" class="btn btn-outline-primary">
+              </form>
+              <form id='sign-out'>
+                <h3>Sign Out</h3>
+                <!-- <form id='sign-out'> // wrapped for jQuery hide()-->
+                  <input type="submit" value="Sign Out" class="btn btn-outline-primary"/>
+              </form>
+
+            <h3>Select a Database to View</h3>
+              <form id='show-labs'>
+                <input type="submit" value="Show All Appliances" class="btn btn-outline-primary"/>
+              </form>
+              <br>
+              <form id='show-tools'>
+                <input type="submit" value="Show All Tools" class="btn btn-outline-primary"/>
+              </form>
+            </div>
+            <div class='in-app'>
+              <form id='add-appliance'>
+                <h3>Add Appliance</h3>
+                <input type="text" name="appliance[location]" placeholder="Location" required>
+                <input type="text" name="appliance[part_number]" placeholder="Part Number" required>
+                <input type="text" name="appliance[image_url]" placeholder="Image URL" required>
+                <input type="submit" value="Create Appliance" class="btn btn-outline-primary"/>
+              </form>
+              <!-- <button id="clearLabsButton" class="btn btn-outline-primary">Clear Appliances</button> -->
+            </div>
+            <div class='in-app'>
+              <form id='add-tool'>
+                <h3>Add Tool</h3>
+                <input type="text" name="tool[name]" placeholder="Name" required/>
+                <input type="text" name="tool[category]" placeholder="Category" required/>
+                <input type="submit" value="Create Tool" class="btn btn-outline-primary"/>
+              </form>
+            </div>
+          </nav>
+        </header>
+        <!-- <div class='message-block'> added div class to modify CSS so block size stays constant
+        </div> -->
+
+          <h3 id="message">Item Info</h3>
+
+      <main>
+        <!-- Start Handlebars code -->
+        <div id="content" class="content"> </div>
+        <!-- End Handlebars code -->
+      </main>
+      <footer>
+        <p>Created by Dave Santore as part of General Assembly Boston's SEI2 program, copyright 2019</p>
+      </footer>
+    </body>
+</html>
